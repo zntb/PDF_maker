@@ -25,6 +25,9 @@ for index, row in df.iterrows():
         new_y=YPos.NEXT      # Replaces ln=1
     )
     pdf.line(10, 22, 200, 22)
+    
+    for i in range(row["Pages"] - 1):
+        pdf.add_page()
 
 # Modern output() usage without deprecated "dest" parameter:
 pdf.output("output.pdf")  # Removed "F" parameter
